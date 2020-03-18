@@ -17,9 +17,9 @@ if key not in my_dict:
 #### defaultdict
 * 在实例化一个 defaultdict 的时候，需要给构造方法提供一个可调用对象，这个可调用对象会在 \_\_getitem__ 碰到找不到的键的时候被调用，让 \_\_getitem__ 返回某种默认值。
 * 比如，我们新建了这样一个字典:dd = defaultdict(list)，如果键'new-key'在dd中还 不存在的话，表达式 dd['new-key'] 会按照以下的步骤来行事。
-  * (1) 调用 list() 来建立一个新列表。
-  * (2) 把这个新列表作为值，'new-key' 作为它的键，放到 dd 中。 
-  * (3) 返回这个列表的引用。
+  * 调用 list() 来建立一个新列表。
+  * 把这个新列表作为值，'new-key' 作为它的键，放到 dd 中。 
+  * 返回这个列表的引用。
 * 而这个用来生成默认值的可调用对象存放在名为 default_factory 的实例属性里。
 * eg:
     ~~~python
