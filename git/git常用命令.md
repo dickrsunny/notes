@@ -1,0 +1,34 @@
+
+- 查看分支
+  - `git branch [-- all]` 
+- 查看远程分支
+  - `git ls-remote`
+- 创建分支
+  - `git branch <branch_name>`
+- 切换分支
+  - `git checkout <branch_name>` 或者 `git switch <branch_name>`
+- 创建+切换分支
+  - `git checkout -b <branch_name>` 或者 `git switch -c <branch_name>`
+- 合并某分支到当前分支
+  -  `git merge <branch_name>`
+- 删除分支
+  - `git branch -d <branch_name>`
+- 删除远程分支
+  - `git push <remote_name> :<branch_name>`
+- 添加远程仓库
+  - `git remote add <remote_name> <origin_address>`
+- 删除远程仓库
+  - `git remote rm <remote_name>`
+- 打标签
+  - `git tag <tag_name> [<commit_id>]` &nbsp;&nbsp;# 默认当前commit id打标签，可以指定commit id
+- 删除标签
+  - `git tag -d <tag_name>`
+- 版本回退
+  - `git reset --hard <head^>|<commid_id>` &nbsp;&nbsp;# 回退到上一个commit|指定的commit id 
+- 查看文件修改
+  - `git blame <file_name> [<-L <line_num_start,line_num_end>>]` 
+- git log 一行展示
+  - `git log --oneline`
+- 回滚
+  - `git revert <commit_id>| <commit_id_start, commit_id_end>`
+
