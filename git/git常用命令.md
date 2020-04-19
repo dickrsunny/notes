@@ -12,7 +12,7 @@
 - 合并某分支到当前分支
   -  `git merge <branch_name>`
 - 删除分支
-  - `git branch -d <branch_name>`
+  - `git branch -d|-D <branch_name>` &nbsp;&nbsp;# -D表示强制删除（例如未合并的分支）
 - 删除远程分支
   - `git push <remote_name> :<branch_name>`
 - 添加远程仓库
@@ -26,7 +26,7 @@
 - 版本回退
   - `git reset --hard <head^>|<commid_id>` &nbsp;&nbsp;# 回退到上一个commit|指定的commit id 
 - 查看文件修改
-  - `git blame <file_name> [<-L <line_num_start,line_num_end>>]` 
+  - `git blame <file_name> [-L <line_num_start,line_num_end>]` 
 - git log 一行展示
   - `git log --oneline`
 - 回滚
