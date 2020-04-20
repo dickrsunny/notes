@@ -1,0 +1,85 @@
+
+{
+    "debug.onTaskErrors": "showErrors",
+    "window.zoomLevel": 0.5,
+    "extensions.ignoreRecommendations": true,
+    // "vsicons.dontShowNewVersionMessage": true,
+
+    // files autosave
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    // files autosave end 
+
+    // explorer
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    // explorer end
+
+    // editor
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Monaco",
+    "editor.wordWrap": "on",
+    // editor end
+
+    // workbench
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreview": false,
+
+    // python
+    // "python.pythonPath": "/usr/local/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvironment": false,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Enabled": true,
+    "python.autoComplete.addBrackets": true,
+    // python end
+
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/*.pyc": true,
+      "**/__pycache__": true,
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+
+    // terminal
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontSize": 13,
+    // terminal end
+
+    // vim 设置
+    "vim.useSystemClipboard": true,
+    // "vim.searchHighlightColor": "rgba(150, 150, 150, 0.3)",
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      },
+    ],
+    // vim end
+
+    // leetcode
+    "leetcode.workspaceFolder": "/Users/xxx/.leetcode",
+    "leetcode.defaultLanguage": "python3",
+    "leetcode.endpoint": "leetcode-cn",
+    // leetcode end
+
+    // code-runner
+    "code-runner.executorMap": {
+      "python": "python3",
+      "cpp": "cd $dir && clang++ $fileName -o $fileNameWithoutExt.out -Wall -g -std=c++11 && $dir$fileNameWithoutExt.out",
+      "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    },
+    "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+    // code-runner end
+}
