@@ -1,40 +1,12 @@
-
 {
+    // base config
     "debug.onTaskErrors": "showErrors",
     "window.zoomLevel": 0.5,
     "extensions.ignoreRecommendations": true,
     // "vsicons.dontShowNewVersionMessage": true,
-
-    // files autosave
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-    // files autosave end 
-
-    // explorer
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    // explorer end
-
-    // editor
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Monaco",
-    "editor.wordWrap": "on",
-    // editor end
-
-    // workbench
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.editor.enablePreview": false,
-
-    // python
-    // "python.pythonPath": "/usr/local/bin/python3",
-    "python.linting.pylintEnabled": true,
-    "python.terminal.activateEnvironment": false,
-    "python.formatting.provider": "yapf",
-    "python.linting.flake8Enabled": true,
-    "python.autoComplete.addBrackets": true,
-    // python end
-
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    //
     "files.exclude": {
       "**/.git": true,
       "**/.svn": true,
@@ -48,30 +20,218 @@
       "**/.settings": true,
       "**/.factorypath": true
     },
+    // base config end
+
+    // files autosave
+    // "files.autoSave": "afterDelay",
+    // "files.autoSaveDelay": 1000,
+    "files.autoSave": "onFocusChange",
+    // "files.autoSave": "off",
+    "files.trimTrailingWhitespace": true,
+    // files autosave end
+
+    // explorer
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    // explorer end
+
+    // editor
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Monaco",
+    "editor.wordWrap": "on",
+    "editor.dragAndDrop": false,
+    "editor.minimap.enabled": false,
+    "editor.glyphMargin": false,
+    // - active suggestion in comments and string
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    // - prevent the editor from scrolling beyond the last line.
+    "editor.scrollBeyondLastLine": false,
+    // editor end
+
+    // workbench
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreview": false,
+    "workbench.tips.enabled": false,
+
+    // python
+    // "python.pythonPath": "/usr/local/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvironment": false,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Enabled": true,
+    "python.autoComplete.addBrackets": true,
+    // python end
 
     // terminal
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.fontSize": 13,
+    "terminal.integrated.scrollback": 2000,
+    "terminal.external.osxExec": "iTerm.app",
+    "debug.console.fontSize": 13,
     // terminal end
 
     // vim 设置
+    "vim.leader": ";",
     "vim.useSystemClipboard": true,
     // "vim.searchHighlightColor": "rgba(150, 150, 150, 0.3)",
     "vim.hlsearch": true,
+    "vim.visualstar": true,
     "vim.insertModeKeyBindings": [
       {
         "before": ["j", "j"],
         "after": ["<Esc>"]
       },
     ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "e"],
+            "after": ["$"]
+        },
+        {
+            "before": ["leader", "b"],
+            "after": ["0"]
+        },
+        // - leader-q to quit
+        {
+            "before": ["leader", "q"],
+            "commands": [":q"]
+        },
+        // - leader-w to save
+        {
+            "before": ["leader", "w"],
+            "commands": [":w"]
+        },
+        // - leader-gd to goToDefinition
+        {
+            "before": ["leader", "g", "d"],
+            "after": ["g", "d"]
+        },
+        // - leader-jd to goToDefinition
+        {
+            "before": ["leader", "j", "d"],
+            "after": ["g", "d"]
+        },
+        // - leader-gh show help-tip-def
+        {
+            "before": ["leader", "g", "h"],
+            "after": ["g", "h"]
+        },
+        // - leader-h show help-tip-def
+        {
+            "before": ["leader", "h"],
+            "after": ["g", "h"]
+        },
+        // - leader-cc comment
+        {
+            "before": ["leader", "c", "c"],
+            "commands": ["editor.action.addCommentLine"]
+        },
+        // - leader-cu uncomment
+        {
+            "before": ["leader", "c", "u"],
+            "commands": ["editor.action.removeCommentLine"]
+        },
+        // - leader-p to all opened editors
+         {
+            "before": ["leader", "p"],
+            "commands": [
+                "workbench.action.openNextRecentlyUsedEditorInGroup"
+            ]
+        },
+        // - leader-f: go to file
+        {
+            "before": ["leader", "f"],
+            "commands": [
+                "workbench.action.quickOpen",
+            ]
+        },
+        // - leader-g go to symbol
+        {
+            "before": ["leader", "g"],
+            "commands": [
+                "workbench.action.gotoSymbol",
+            ]
+        },
+        // - leader-s show problems
+        {
+            "before": ["leader", "s"],
+            "commands": [
+                "workbench.actions.view.problems"
+            ]
+        },
+        // - leader-en Go to Next Error or Warning
+        {
+            "before": ["leader", "e", "n"],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ]
+        },
+        // - leader-ep Go to Previous Error or Warning
+        {
+            "before": ["leader", "e", "p"],
+            "commands": [
+                "editor.action.marker.prevInFiles"
+            ]
+        },
+        // - leader-/ to turn-off highlight
+        {
+            "before":["leader", "/"],
+            "commands": [
+                ":nohl",
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "e"],
+            "after": ["$"]
+        },
+        {
+            "before": ["leader", "b"],
+            "after": ["0"]
+        },
+        // - leader-cc comment
+        {
+            "before": ["<leader>", "c", "c"],
+            "commands": ["editor.action.addCommentLine"]
+        },
+        // - leader-cu uncomment
+        {
+            "before": ["<leader>", "c", "u"],
+            "commands": ["editor.action.removeCommentLine"]
+        },
+        // - indent/outdent lines (repeatable)
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "vim.easymotion": true,
     // vim end
 
     // leetcode
-    "leetcode.workspaceFolder": "/Users/xxx/.leetcode",
+    "leetcode.workspaceFolder": "/Users/kane/.leetcode",
     "leetcode.defaultLanguage": "python3",
-    "leetcode.endpoint": "leetcode-cn",
     // leetcode end
 
     // code-runner
@@ -82,4 +242,8 @@
     },
     "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
     // code-runner end
+
+    // datetime
+    "dateTime.customFormat": "HH:mm ddd DD MMM",
+    // datetime end
 }
